@@ -13,12 +13,13 @@
     delay=0.25;          ##display delay, may be 0
 
     disp('-----------------------------------------------------------')
-    disp('|Beware, this code is only compatible GNU Octave ONLY !!! |')
+    disp('|Beware, this code is only compatible with GNU Octave !!! |')
     disp('-----------------------------------------------------------')
 
     pkg load image ## for compatibility with Octave
 
     mkdir Image_out
+    mkdir Image_steps
     imagefiles = dir('Image_in/*.png');## the default format is png, other are ignored
     nfiles = length(imagefiles);    ## Number of files found
 
@@ -37,6 +38,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_00.gif');
       end
 
       ##color reduction to 256 grayscale levels
@@ -53,6 +55,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_01.gif');
       end
 
       ##cropping step
@@ -71,6 +74,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_02.gif');
       end
 
       disp('Resizing image to 128x128');
@@ -80,6 +84,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_03.gif');
       end
 
       ##increasing contrast
@@ -89,6 +94,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_04.gif');
       end
 
       disp('Simulating CMOS artifacts');
@@ -99,6 +105,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_05.gif');
       end
 
       ##adding Gaussian noise
@@ -108,6 +115,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_07.gif');
       end
 
       ##adding amplification artifacts (shadows)
@@ -123,6 +131,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_08.gif');
       end
 
       ##2D edge enhancement
@@ -139,6 +148,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_09.gif');
       end
 
       ##Bayer dithering (what a Game Boy Camera does)
@@ -189,6 +199,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_10.gif');
       end
 
       disp('Cropping to 128x112');
@@ -197,6 +208,7 @@
       if verbose==1;
       imshow(a);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_11.gif');
       end
 
       disp('Adding borders');
@@ -205,6 +217,7 @@
       if verbose==1;
       imshow(border);
       pause(delay)
+      saveas(gcf,'./Image_steps/step_12.gif');
       end
 
       disp('Resizing for social media');
