@@ -12,5 +12,5 @@ The repo comes with a similar code allowing faking a Game Boy Printer. Same prin
 ## Showcase
 ![](Pulp.gif)
 
-## Acknoledgements
+## Acknowledgements
 - [Andreas Hahn](https://github.com/HerrZatacke/dither-pattern-gen) for documenting the Game Boy Camera Bayer Dithering
