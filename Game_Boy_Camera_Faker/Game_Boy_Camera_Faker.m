@@ -1,24 +1,24 @@
-    % Raphael BOICHOT 25/11/2021 E-paper module for NeoGB printer
-    % multi OS compatibility improved by Cristofer Cruz 2022/06/21
-    % Compatible with Matlab and Octave
-    % image must be 4 colors maximum, which is the native output format
+    % Raphael BOICHOT 03/11/2024
     clear
     clc
     close all
-    upscaling_factor=4;
-    Dithering_patterns = [0x2A, 0x5E, 0x9B, 0x51, 0x8B, 0xCA, 0x33, 0x69, 0xA6, 0x5A, 0x97, 0xD6, 0x44, 0x7C, 0xBA, 0x37, 0x6D, 0xAA, 0x4D, 0x87, 0xC6, 0x40, 0x78, 0xB6, 0x30, 0x65, 0xA2, 0x57, 0x93, 0xD2, 0x2D, 0x61, 0x9E, 0x54, 0x8F, 0xCE, 0x4A, 0x84, 0xC2, 0x3D, 0x74, 0xB2, 0x47, 0x80, 0xBE, 0x3A, 0x71, 0xAE];
-    alpha=0.5;
-    intensity=3;
-    verbose=1;
-    %written somewhere november 2024
+    upscaling_factor=4;   %for image_output
+    Dithering_patterns = [0x2A, 0x5E, 0x9B, 0x51,0x8B, 0xCA, 0x33, 0x69,0xA6, 0x5A, 0x97, 0xD6,0x44, 0x7C, 0xBA, 0x37,0x6D, 0xAA, 0x4D, 0x87,0xC6, 0x40, 0x78, 0xB6,0x30, 0x65, 0xA2, 0x57,0x93, 0xD2, 0x2D, 0x61,0x9E, 0x54, 0x8F, 0xCE,0x4A, 0x84, 0xC2, 0x3D,0x74, 0xB2, 0x47, 0x80,0xBE, 0x3A, 0x71, 0xAE];
+                         %dithering pattern of the Game Boy Camera
+    alpha=0.5;           %2D enhancement ratio, same formula as 82FP datasheet
+    intensity_streaks=4; %old sensors, take 4 or more, new sensors, take 3 or less, 0 for 83FP
+    intensity_noise=4;   %should be about the same as previous, 0 for animated gifs
+    intensity_amp=16;    %around this value is OK for 82FP, 0 for animated gifs
+    verbose=1;           %0 for fast mode
+    delay=0.25;          %display delay, may be 0
+
     disp('-----------------------------------------------------------')
     disp('|Beware, this code is for GNU Octave ONLY !!!             |')
     disp('-----------------------------------------------------------')
 
     pkg load image % for compatibility with Octave
 
-    delay=1;
-    mkdir Image_out
+        mkdir Image_out
     imagefiles = dir('Image_in/*.png');% the default format is png, other are ignored
     nfiles = length(imagefiles);    % Number of files found
 
@@ -50,12 +50,10 @@
         a=rgb2gray(a);
       end
 
-
       if verbose==1;
       imshow(a);
       pause(delay)
       end
-
 
       %cropping step
       disp('Cropping image');
@@ -97,9 +95,9 @@
       %creating mask
       intensity=3;
       %adding vertical streaks
-      mask=repmat([+intensity*ones(128,1),-intensity*ones(128,1)],1,64);
+      mask=repmat([+intensity_streaks*ones(128,1),-intensity_streaks*ones(128,1)],1,64);
       %adding noise
-      mask=mask+intensity*round(randn(128,128));
+      mask=mask+intensity_noise*round(randn(128,128));
       %adding amplification artifacts
       amp_artifact=floor(17*rand())
       band=[zeros(1,8*amp_artifact),ones(1,128-8*amp_artifact)]-1;
@@ -107,7 +105,7 @@
       if rand<0.5
         band=rot90(band);
       end
-      mask=mask+8*intensity*band;
+      mask=mask+intensity_amp*band;
       a=a+mask;
 
       if verbose==1;
