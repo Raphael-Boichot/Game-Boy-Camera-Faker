@@ -1,7 +1,7 @@
 # The Game Boy Camera Faker
 
 ## Why?
-Because it has to be done, this [GNU Octave code](https://octave.org/) allows to convert any image in Game Boy Camera style. GNU Octave scripts can be interpreted within their dedicated interface (Octave GUI) or in command line (Octave CLI). There is no dependencies at all, once installed, Octave is able to run all codes out of the box. There are tons of codes doing this but most are just crap.
+Because it has to be done, this [GNU Octave code](https://octave.org/) allows to convert any image in Game Boy Camera style. GNU Octave scripts can be interpreted within their dedicated interface (Octave GUI) or in command line (Octave CLI). There is no dependencies at all, once installed, Octave is able to run all codes out of the box. There are tons of codes yet doing this but most are just crap. My goal is to make fake Game Boy Camera images impossible to recognize among legit ones.
 
 ## How ?
 Just drop images in **png format** in ./Image_in folder and run the code. Converted images will appear in the ./Image_out folder. There are options you can play with but the default parameters are the closest as possible to what gives a Game Boy Camera. It perfectly mimicks all visual artifacts of the Mitsubishi M64282FP CMOS sensor and the dithering pattern used in the Game Boy Camera.
