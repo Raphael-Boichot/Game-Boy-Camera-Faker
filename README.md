@@ -12,7 +12,7 @@ In this order (because it is important):
 - It crops the image to make a square one;
 - It resizes the image to 128x128 pixels;
 - It enhances constrast in order to simulate the reduced sensor dynamic sensitivity;
-- It creates a map simulating Game Boy Camera sensor artifacts (secret recipe) and apply it to the image;
+- It creates a map simulating Game Boy Camera sensor artifacts (vertical stripes, Gaussian noise and amplification shadows) and apply it to the image;
 - It applies the 2D enhancement algorithm of the M64282FP sensor;
 - It applies the dithering algorithm of the Game Boy Camera;
 - It finally crops the image to 112x128 and add border. Palette of the image is deduced from the border.
