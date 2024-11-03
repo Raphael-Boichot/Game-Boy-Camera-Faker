@@ -17,11 +17,8 @@ In this order (because it is important):
 - It applies the dithering algorithm of the Game Boy Camera;
 - It finally crops the image to 112x128 and add border. Palette of the image is deduced from the border.
 
-**Animation steps with effects a bit exaggerated**
+**Animation steps**
 ![](Animation.gif)
-
-## Anything else ?
-The repo comes with a similar code allowing faking a Game Boy Printer. Same principle, but it mimicks paper strips coming out a Game Boy Printer. You can choose the paper color, it is optimized for publishing on social media. It is also implemented in the [Game Boy Camera Android manager](https://github.com/Mraulio/GBCamera-Android-Manager).
 
 ## Showcase
 ![](Pulp.gif)
@@ -29,6 +26,9 @@ The repo comes with a similar code allowing faking a Game Boy Printer. Same prin
 The code does not directly convert animated gifs to animated gifs because it would break the tool chain but you can easily decompose gifs, convert them in batch with the code and animate back the converted frames with UnFREEz (provided, not my code) for example.
 
 This code is probably easy to convert to Python or another langage intercacing a webcam. It's up to you to deal with that.
+
+## Anything else ?
+The repo comes with a similar code allowing faking a Game Boy Printer. Same principle, but it mimicks paper strips coming out a Game Boy Printer. You can choose the paper color, it is optimized for publishing on social media. It is also implemented in the [Game Boy Camera Android manager](https://github.com/Mraulio/GBCamera-Android-Manager).
 
 ## Acknowledgements
 - [Andreas Hahn](https://github.com/HerrZatacke/dither-pattern-gen) for documenting the Game Boy Camera Bayer Dithering.
