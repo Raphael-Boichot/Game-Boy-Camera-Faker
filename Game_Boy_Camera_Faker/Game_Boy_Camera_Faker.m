@@ -200,7 +200,7 @@
       disp('Resizing for social media');
       final_image=imresize(border,upscaling_factor,"nearest");
       disp('Saving image');
-      imwrite(final_image,['./Image_out/Faked_',currentfilename,'.gif']);
+      imwrite(final_image,['./Image_out/Faked_',currentfilename(1:end-4),'.gif']);
       close all
     end
     disp('Done!')
