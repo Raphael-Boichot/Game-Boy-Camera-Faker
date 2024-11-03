@@ -17,6 +17,8 @@ In this order (because it is important):
 - It applies the dithering algorithm of the Game Boy Camera;
 - It finally crops the image to 112x128 and add border. Palette of the image is deduced from the border.
 
+![](Animation.gif)
+
 ## Anything else ?
 The repo comes with a similar code allowing faking a Game Boy Printer. Same principle, but it mimicks paper strips coming out a Game Boy Printer. You can choose the paper color, it is optimized for publishing on social media. It is also implemented in the [Game Boy Camera Android manager](https://github.com/Mraulio/GBCamera-Android-Manager).
 
