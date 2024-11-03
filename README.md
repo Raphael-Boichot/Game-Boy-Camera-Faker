@@ -12,7 +12,7 @@ The repo comes with a similar code allowing faking a Game Boy Printer. Same prin
 ## Showcase
 ![](Pulp.gif)
 
-The code does not directly convert animated gifs to animated gifs because it would break the tool chain but you can easily decompose gifs, convert them in batch with the code and animate back the converted frames with Unfreez for example.
+The code does not directly convert animated gifs to animated gifs because it would break the tool chain but you can easily decompose gifs, convert them in batch with the code and animate back the converted frames with UnFREEz for example.
 
 ## Acknowledgements
 - [Andreas Hahn](https://github.com/HerrZatacke/dither-pattern-gen) for documenting the Game Boy Camera Bayer Dithering.
