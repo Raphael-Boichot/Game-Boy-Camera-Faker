@@ -27,6 +27,8 @@ The code does not directly convert animated gifs to animated gifs because it wou
 
 This code is probably easy to convert to Python or another langage able to interface a webcam. It's up to you to deal with that, I'm just here to shows the feasability of such a process.
 
+You can also simulate the [DashBoy Camera](https://github.com/Raphael-Boichot/Mitsubishi-M64282FP-dashcam) which basically bypasses the MAC-GBD (no dithering).
+
 ## Anything else ?
 The repo comes with a similar code allowing faking a Game Boy Printer. Same principle, but it mimicks paper strips coming out from a Game Boy Printer. You can choose the paper color. It is optimized for publishing on social media. It is also implemented in the [Game Boy Camera Android manager](https://github.com/Mraulio/GBCamera-Android-Manager) in a close iteration.
 
