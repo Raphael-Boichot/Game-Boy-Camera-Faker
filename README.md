@@ -17,11 +17,10 @@ In this order (because it is important):
 - It applies the dithering algorithm of the Game Boy Camera;
 - It finally crops the image to 112x128 and add border. Palette of the image is deduced from the border.
 
-**Animation steps**
+## Animation steps
 ![](Animation.gif)
 
-
-**Showcase with a meme**
+## Showcase with a meme
 ![](Pulp.gif)
 
 The code does not directly convert animated gifs to animated gifs because it would break the tool chain but you can easily decompose gifs, convert them in batch with the code and animate back the converted frames with UnFREEz (provided here as executable, not my code) for example.
