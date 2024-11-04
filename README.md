@@ -30,7 +30,7 @@ This code is probably easy to convert to Python or another langage able to inter
 You can also simulate the [DashBoy Camera](https://github.com/Raphael-Boichot/Mitsubishi-M64282FP-dashcam) which basically bypasses the MAC-GBD (no dithering).
 
 ## DashBoy Camera vs Game Boy Camera
-![](Comparison.gif)
+![](Comparison.png)
 
 ## Anything else ?
 The repo comes with a similar code allowing faking a Game Boy Printer. Same principle, but it mimicks paper strips coming out from a Game Boy Printer. You can choose the paper color. It is optimized for publishing on social media. It is also implemented in the [Game Boy Camera Android manager](https://github.com/Mraulio/GBCamera-Android-Manager) in a close iteration.
