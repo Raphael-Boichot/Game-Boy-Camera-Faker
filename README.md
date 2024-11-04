@@ -17,7 +17,7 @@ In this order (because it is important):
 - It applies the dithering algorithm of the Game Boy Camera;
 - It finally crops the image to 112x128 and add border. Palette of the image is deduced from the border.
 
-## Animation steps
+## Progressive steps implemented
 ![](Animation.gif)
 
 ## Showcase with a meme
