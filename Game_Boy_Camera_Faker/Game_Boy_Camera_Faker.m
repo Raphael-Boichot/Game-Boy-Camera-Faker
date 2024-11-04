@@ -6,8 +6,8 @@
    Dithering_patterns = [0x2A, 0x5E, 0x9B, 0x51,0x8B, 0xCA, 0x33, 0x69,0xA6, 0x5A, 0x97, 0xD6,0x44, 0x7C, 0xBA, 0x37,0x6D, 0xAA, 0x4D, 0x87,0xC6, 0x40, 0x78, 0xB6,0x30, 0x65, 0xA2, 0x57,0x93, 0xD2, 0x2D, 0x61,0x9E, 0x54, 0x8F, 0xCE,0x4A, 0x84, 0xC2, 0x3D,0x74, 0xB2, 0x47, 0x80,0xBE, 0x3A, 0x71, 0xAE];
    ##dithering pattern of the Game Boy Camera
    alpha=0.5;           ##2D enhancement ratio, same formula as 82FP datasheet
-   intensity_streaks=4; ##old sensors, take 4 or more, new sensors, take 3 or less, 0 for 83FP
-   intensity_noise=4;   ##should be about the same as previous, 0 for animated gifs
+   intensity_streaks=3; ##old sensors, take 4 or more, new sensors, take 3 or less, 0 for 83FP
+   intensity_noise=2;   ##should be about the same as previous, 0 for animated gifs
    intensity_shadow=16; ##around this value is OK for 82FP, 0 for animated gifs
    verbose=1;           ##0 for fast mode
    delay=0.25;          ##display delay, may be 0
@@ -25,7 +25,12 @@
    nfiles = length(imagefiles);    ## Number of files found
 
    disp('Getting palette from border')
-   border=imread('Borders.png');
+   if dashboy_mode==0;
+     border=imread('Borders.png');
+   else
+     border=imread('Dashboy.png');
+   end
+
    border=border(:,:,1);
    palette=unique(border);
 
