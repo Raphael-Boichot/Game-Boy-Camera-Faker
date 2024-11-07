@@ -9,6 +9,7 @@
    intensity_streaks=3; ##old sensors, take 4 or more, new sensors, take 3 or less, 0 for 83FP
    intensity_noise=2;   ##should be about the same as previous, 0 for animated gifs
    intensity_shadow=16; ##around this value is OK for 82FP, 0 for animated gifs
+   saturation=0.05;     ##constrast saturation to mimick the sensor poor dynamics
    verbose=1;           ##0 for fast mode
    delay=0.25;          ##display delay, may be 0
    dashboy_mode=0;      ##stops processing at the MAC_GBD step
@@ -95,7 +96,7 @@
 
      ##increasing contrast
      disp('Increasing contrast');
-     a=imadjust (a);
+     a=imadjust (a, stretchlim (a, saturation), [0; 1]);##autocontrast with 5% saturation at both spectrum end
 
      if verbose==1;
        imshow(a);
