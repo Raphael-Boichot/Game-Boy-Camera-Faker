@@ -86,7 +86,7 @@
 
      disp('Resizing image to 128x128');
      ##Resizing to 128*128
-     a=imresize(a,[128,128],"linear");
+     a=imresize(a,[128,128],"nearest");
 
      if verbose==1;
        imshow(a);
